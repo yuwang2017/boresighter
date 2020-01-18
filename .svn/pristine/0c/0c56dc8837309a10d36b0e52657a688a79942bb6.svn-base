@@ -1,0 +1,10 @@
+[
+    {
+        "merged": "/Users/haiyuan_wang/Projects/sightin/C:\\Projects\\sightin\\platforms\\android\\build\\intermediates\\res\\merged\\debug\\xml\\config.xml",
+        "source": "/Users/haiyuan_wang/Projects/sightin/C:\\Projects\\sightin\\platforms\\android\\res\\xml\\config.xml"
+    },
+    {
+        "merged": "/Users/haiyuan_wang/Projects/sightin/platforms/android/build/intermediates/res/merged/debug/xml/config.xml",
+        "source": "/Users/haiyuan_wang/Projects/sightin/platforms/android/res/xml/config.xml"
+    }
+]

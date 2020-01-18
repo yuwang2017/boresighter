@@ -1,0 +1,21 @@
+{
+    "prepare_queue": {
+        "installed": [],
+        "uninstalled": []
+    },
+    "config_munge": {
+        "files": {}
+    },
+    "installed_plugins": {
+        "cordova-plugin-device": {
+            "PACKAGE_NAME": "com.reloaderscloud.sightin"
+        },
+        "cordova-plugin-whitelist": {
+            "PACKAGE_NAME": "com.reloaderscloud.sightin"
+        },
+        "cordova-plugin-splashscreen": {
+            "PACKAGE_NAME": "com.reloaderscloud.sightin"
+        }
+    },
+    "dependent_plugins": {}
+}

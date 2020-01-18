@@ -1,0 +1,10 @@
+[
+    {
+        "merged": "/Users/haiyuan_wang/Projects/sightin/C:\\Projects\\sightin\\platforms\\android\\build\\intermediates\\res\\merged\\debug\\drawable-land-ldpi-v4\\screen.png",
+        "source": "/Users/haiyuan_wang/Projects/sightin/C:\\Projects\\sightin\\platforms\\android\\res\\drawable-land-ldpi\\screen.png"
+    },
+    {
+        "merged": "/Users/haiyuan_wang/Projects/sightin/platforms/android/build/intermediates/res/merged/debug/drawable-land-ldpi-v4/screen.png",
+        "source": "/Users/haiyuan_wang/Projects/sightin/platforms/android/res/drawable-land-ldpi/screen.png"
+    }
+]

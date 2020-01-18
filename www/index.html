@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="format-detection" content="telephone=no" />
+        <meta name="msapplication-tap-highlight" content="no" />
+        <meta http-equiv="Content-Security-Policy"
+            content="default-src 'self' 'unsafe-inline'
+            data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' * 'unsafe-inline'; media-src *">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+            <link rel="stylesheet" type="text/css" href="css/jquery.mobile-1.4.5.css" />
+            <link rel="stylesheet" type="text/css" href="css/jqm-icon-pack-fa.css" />
+            <link rel="stylesheet" type="text/css" href="css/jquery.mobile.simpledialog.min.css" />
+            <style type="text/css">
+                #settingPage {
+                    background:url('img/target2.png') no-repeat center center fixed;
+                    -webkit-background-size: cover;
+                    -moz-background-size: cover;
+                    -o-background-size: cover;
+                    background-size: cover;
+                }
+            
+            #settingPageMetric {
+                background:url('img/target2.png') no-repeat center center fixed;
+                -webkit-background-size: cover;
+                -moz-background-size: cover;
+                -o-background-size: cover;
+                background-size: cover;
+            }
+            #helpPage {
+                background:url('img/target2.png') no-repeat center center fixed;
+                -webkit-background-size: cover;
+                -moz-background-size: cover;
+                -o-background-size: cover;
+                background-size: cover;
+            }
+            </style>
+            <title>Sightin Calculator</title>
+            </head>
+    
+    <body>
+        <div data-role="page" id="settingPage" data-theme="b">
+            
+            <div data-role="header">
+                <h1>Boresighter</h1>
+            </div>
+            
+            <div id="settingMain" data-role="main" class="ui-content">
+                <label for="caliber">&nbsp;&nbsp;Caliber</label>
+                <select name="caliber" id="caliber">
+                    <option value="c22lr">22LR</option>
+                    <option value="c223remington-55">223 Remington M193</option>
+                    <option value="c223remington-69">223 Remington 69</option>
+                    <option value="c223remington-77">223 Remington 77</option>
+                    <option value="c243win">243 Winchester</option>
+                    <option value="c65sweden">6.5X55 Swedish</option>
+                    <option value="c270win">270 Winchester</option>
+                    <option value="c308win-168">308 Winchester 168</option>
+                    <option value="c308win-168">308 Winchester 175</option>
+                    <option value="c30-06">30-06 Springfield</option>
+                    <option value="c300blk">300 ACC Blackout - Subsonic</option>
+                    <option value="c76239">7.62X39</option>
+                    <option value="c76254r">7.62X54R Heavy Ball</option>
+                    <option value="c303british">303 British</option>
+                    <option value="c300win">300 Winchester Magnum</option>
+                    <option value="c338lapua">338 Lapua Magnum</option>
+                </select>
+                <div class="ui-grid-a">
+                    <div class="ui-block-a">
+                        <label for="shootingDistance">&nbsp;&nbsp;Shooting Distance</label>
+                    </div>
+                    <div class="ui-block-b">
+                        <select name="shootingDistance" id="shootingDistance">
+                            <option value="15">15 yard</option>
+                            <option value="25">25 yard</option>
+                            <option value="50">50 yard</option>
+                            <option value="100">100 yard</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="ui-grid-a">
+                    <div class="ui-block-a">
+                        <label for="distance">&nbsp;&nbsp;Zero Distance</label>
+                    </div>
+                    <div class="ui-block-b">
+                        <select name="distance" id="distance">
+                            <option value="50">50 yard</option>
+                            <option value="100">100 yard</option>
+                            <option value="150">150 yard</option>
+                            <option value="200">200 yard</option>
+                            <option value="250">250 yard</option>
+                            <option value="300">300 yard</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <div class="ui-grid-a">
+                    <div class="ui-block-a">
+                        <label for="clickUnit">&nbsp;&nbsp;Scope Adjustment</label>
+                    </div>
+                    <div class="ui-block-b">
+                        <select name="clickUnit" id="clickUnit">
+                            <option value="2">1/4 MOA</option>
+                            <option value="1">1/8 MOA</option>
+                            <option value="3">1/2 MOA</option>
+                            <option value="5">1 MOA</option>
+                            <option value="4">1/10 MIL</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <label for="dx">&nbsp;&nbsp;Point of Impact (inch)</label>
+                <div class="ui-grid-a">
+                    <div class="ui-block-a">
+                        <input type="number" name="dx" id="dx">
+                            </div>
+                    <div class="ui-block-b">&nbsp;&nbsp;
+                        <select name="xd" id="xd" data-role="slider">
+                            <option value="L">Left</option>
+                            <option value="R">Right</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="ui-grid-a">
+                    <div class="ui-block-a">
+                        <input type="number" name="dy" id="dy">
+                            </div>
+                    <div class="ui-block-b">&nbsp;&nbsp;
+                        <select name="yd" id="yd" data-role="slider">
+                            <option value="H">High</option>
+                            <option value="L">Low</option>
+                        </select>
+                    </div>
+                </div>
+                <a href="#" data-role="button" class="ui-btn ui-icon-forward ui-btn-icon-left"  id="btnCalInch">Get Scope Adjustment</a>
+            </div>
+            
+            <div data-role="footer" style="text-align:center;" data-position="fixed" data-fullscreen="true">
+                <div data-role="controlgroup" data-type="horizontal">
+                    <a href="#settingPage" class="ui-btn ui-icon-list-alt ui-btn-icon-left">&nbsp;Inch&nbsp;</a>
+                    <a href="#helpPage" class="ui-btn ui-icon-info ui-btn-icon-left">&nbsp;Help&nbsp;</a>
+                    <a href="#settingPageMetric" data-transition="pop" class="ui-btn ui-icon-list-alt ui-btn-icon-left">&nbsp;Metric&nbsp;</a>
+                </div>
+            </div>
+            
+        </div>
+        
+        <div data-role="page" id="settingPageMetric" data-theme="b">
+            
+            <div data-role="header">
+                <h1>Boresighter</h1>
+            </div>
+            
+            <div id="settingMain" data-role="main" class="ui-content">
+                <label for="caliber2">&nbsp;&nbsp;Caliber</label>
+                <select name="caliber2" id="caliber2">
+                    <option value="c22lr">22LR</option>
+                    <option value="c223remington-55">223 Remington M193</option>
+                    <option value="c223remington-69">223 Remington 69</option>
+                    <option value="c223remington-77">223 Remington 77</option>
+                    <option value="c243win">243 Winchester</option>
+                    <option value="c65sweden">6.5X55 Swedish</option>
+                    <option value="c270win">270 Winchester</option>
+                    <option value="c308win-168">308 Winchester 168</option>
+                    <option value="c308win-175">308 Winchester 175</option>
+                    <option value="c30-06">30-06 Springfield</option>
+                    <option value="c300blk">300 ACC Blackout - Subsonic</option>
+                    <option value="c76239">7.62X39</option>
+                    <option value="c76254r">7.62X54R Heavy Ball</option>
+                    <option value="c303british">303 British</option>
+                    <option value="c300win">300 Winchester Magnum</option>
+                    <option value="c338lapua">338 Lapua Magnum</option>
+                </select>
+                <div class="ui-grid-a">
+                    <div class="ui-block-a">
+                        <label for="shootingDistance2">&nbsp;&nbsp;Shooting Distance</label>
+                    </div>
+                    <div class="ui-block-b">
+                        <select name="shootingDistance2" id="shootingDistance2">
+                            <option value="15">15m</option>
+                            <option value="25">25m</option>
+                            <option value="50">50m</option>
+                            <option value="100">100m</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="ui-grid-a">
+                    <div class="ui-block-a">
+                        <label for="distance2">&nbsp;&nbsp;Zero Distance</label>
+                    </div>
+                    <div class="ui-block-b">
+                        <select name="distance2" id="distance2">
+                            <option value="50">50m</option>
+                            <option value="100">100m</option>
+                            <option value="150">150m</option>
+                            <option value="200">200m</option>
+                            <option value="250">250m</option>
+                            <option value="300">300m</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <div class="ui-grid-a">
+                    <div class="ui-block-a">
+                        <label for="clickUnit2">&nbsp;&nbsp;Scope Adjustment</label>
+                    </div>
+                    <div class="ui-block-b">
+                        <select name="clickUnit2" id="clickUnit2">
+                            <option value="4">1/10 MIL</option>
+                            <option value="1">1/8 MOA</option>
+                            <option value="2">1/4 MOA</option>
+                            <option value="3">1/2 MOA</option>
+                            <option value="5">1 MOA</option>
+                            
+                        </select>
+                    </div>
+                </div>
+                
+                <label for="dx2">&nbsp;&nbsp;Point of Impact (cm)</label>
+                <div class="ui-grid-a">
+                    <div class="ui-block-a">
+                        <input type="number" name="dx2" id="dx2">
+                            </div>
+                    <div class="ui-block-b">&nbsp;&nbsp;
+                        <select name="xd2" id="xd2" data-role="slider">
+                            <option value="L">Left</option>
+                            <option value="R">Right</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="ui-grid-a">
+                    <div class="ui-block-a">
+                        <input type="number" name="dy2" id="dy2">
+                            </div>
+                    <div class="ui-block-b">&nbsp;&nbsp;
+                        <select name="yd2" id="yd2" data-role="slider">
+                            <option value="H">High</option>
+                            <option value="L">Low</option>
+                        </select>
+                    </div>
+                </div>
+                <a href="#" data-role="button" class="ui-btn ui-icon-forward ui-btn-icon-left"  id="btnCalMetric">Get Scope Adjustment</a>
+                
+            </div>
+            
+            <div data-role="footer" style="text-align:center;" data-position="fixed" data-fullscreen="true">
+                <div data-role="controlgroup" data-type="horizontal">
+                    <a href="#settingPage" class="ui-btn ui-icon-list-alt ui-btn-icon-left">&nbsp;Inch&nbsp;</a>
+                    <a href="#helpPage" class="ui-btn ui-icon-info ui-btn-icon-left">&nbsp;Help&nbsp;</a>
+                    <a href="#settingPageMetric" data-transition="pop" class="ui-btn ui-icon-list-alt ui-btn-icon-left">&nbsp;Metric&nbsp;</a>
+                </div>
+            </div>
+            
+        </div>
+        
+        
+        <div data-role="page" id="helpPage" data-theme="b">
+            
+            <div data-role="header">
+                <h1>How it works</h1>
+            </div>
+            
+            <div id="settingMain" data-role="main" class="ui-content">
+                
+                When you get a new rifle or you’ve changed scopes, the first thing you must do is get the rifle on paper. In most cases, you won’t able to hit the 100 yard paper with the first shot. You need put up a target at short range - 25 or 50 yards. Get on this target first, and then try to figure out how to adjust your scope. It’s actually not as easy as you may thought.
+                <br/>
+                The app makes this task much easier. It allows you sight in your rifle at short range and enter the point of impact. The app calculates the correct scope adjustment using its built-in ballistic data.
+                
+                The ballistic data for each caliber is from popular factory load: <br/>
+                <ul>
+                    <li>22LR : 38 grain Copper Plated HP</li>
+                    <li>223 Remington : 55gr BT-FMJ M193</li>
+                    <li>223 Remington : 69gr Sierra MatchKing BTHP</li>
+                    <li>223 Remington : 77gr Sierra MatchKing BTHP</li>
+                    <li>243 Winchester : 100gr Sierra GameKing SP</li>
+                    <li>6.5X55 Swedish : 123gr Sierra MatchKing BTHP</li>
+                    <li>270 Winchester : 150gr Sierra GameKing SP</li>
+                    <li>308 Winchester : 168gr Federal GMM</li>
+                    <li>308 Winchester : 175gr Federal GMM</li>
+                    <li>300 AAC Blackout : 220gr OTM, Subsonic</li>
+                    <li>7.62X39 : 123gr FMJ</li>
+                    <li>7.62X54R : 180gr FMJ</li>
+                    <li>30-06 Springfield : 165gr Sierra GameKing SP</li>
+                    <li>338 Lapua Magnum : 250gr Sierra MatchKing BTHP</li>
+                    <li>303 British : 180gr Speer Hot-Cor SP</li>
+                    <li>300 Winchester Magnum : 190gr Sierra MatchKing BTHP</li>
+                </ul>
+            </div>
+            
+            <div data-role="footer" style="text-align:center;" data-position="fixed" data-fullscreen="true">
+                <div data-role="controlgroup" data-type="horizontal">
+                    <a href="#settingPage" class="ui-btn ui-icon-list-alt ui-btn-icon-left">&nbsp;Inch&nbsp;</a>
+                    <a href="#helpPage" class="ui-btn ui-icon-info ui-btn-icon-left">&nbsp;Help&nbsp;</a>
+                    <a href="#settingPageMetric" data-transition="pop" class="ui-btn ui-icon-list-alt ui-btn-icon-left">&nbsp;Metric&nbsp;</a>
+                </div>
+            </div>
+            
+        </div>
+        
+        <script type="text/javascript" src="cordova.js"></script>
+        <script type="text/javascript" src="js/jquery-2.1.4.js"></script>
+        <script type="text/javascript" src="js/jquery.mobile-1.4.5.js"></script>
+        <script type="text/javascript" src="js/jquery.mobile.simpledialog2.min.js"></script>
+        <script type="text/javascript" src="js/sessionSetting.js"></script>
+        <script type="text/javascript">
+            
+            app.initialize();
+            
+            </script>
+    </body>
+</html>
