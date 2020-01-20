@@ -298,7 +298,7 @@
     NSURL* appURL = [self appUrl];
 
     [CDVUserAgentUtil acquireLock:^(NSInteger lockToken) {
-        _userAgentLockToken = lockToken;
+        self->_userAgentLockToken = lockToken;
         [CDVUserAgentUtil setUserAgent:self.userAgent lockToken:lockToken];
         if (appURL) {
             NSURLRequest* appReq = [NSURLRequest requestWithURL:appURL cachePolicy:NSURLRequestUseProtocolCachePolicy timeoutInterval:20.0];
